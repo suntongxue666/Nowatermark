@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const urlInput = document.getElementById('urlInput');
     const pasteButton = document.getElementById('pasteButton');
+    const clearButton = document.getElementById('clearButton');
     const startButton = document.getElementById('startButton');
     
     const resultSection = document.getElementById('resultSection');
@@ -63,6 +64,15 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Failed to read clipboard: ', err);
             alert('Unable to access clipboard. Please paste the link manually.');
         }
+    });
+    
+    // Clear button functionality
+    clearButton.addEventListener('click', function() {
+        urlInput.value = '';
+        urlInput.focus();
+        
+        // Hide result section if shown
+        resultSection.style.display = 'none';
     });
     
     // Extract URL from text
