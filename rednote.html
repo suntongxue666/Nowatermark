@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO优化的TDK信息 -->
+    <title>RedNote (小红书) Video & Image Downloader - Download XiaoHongShu Content | NoWatermark</title>
+    <meta name="description" content="Download RedNote (小红书/XiaoHongShu) videos and images without watermark. Save RedNote content in HD quality for free.">
+    <meta name="keywords" content="RedNote downloader, 小红书 downloader, XiaoHongShu downloader, RedNote video downloader, 小红书视频下载">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEJD1NWJ7C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WEJD1NWJ7C');
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="password-modal" id="passwordModal">
+        <div class="password-container">
+            <h2>Enter Password</h2>
+            <input type="password" id="passwordInput" placeholder="Enter password">
+            <button id="submitPassword">Submit</button>
+            <p id="passwordError" class="error-message"></p>
+        </div>
+    </div>
+
+    <header class="top-header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">NoWatermark</a></h1>
+            </div>
+            <nav class="platform-nav">
+                <a href="tiktok.html">TikTok</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="instagram.html">Instagram</a>
+                <a href="rednote.html" class="active">RedNote</a>
+                <a href="pinterest.html">Pinterest</a>
+                <a href="bilibili.html">Bilibili</a>
+                <a href="facebook.html">Facebook</a>
+                <a href="threads.html">Threads</a>
+                <a href="vk.html">VK</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero-section">
+            <h2>RedNote (小红书) Video & Image Downloader</h2>
+            <p class="subtitle">Download RedNote videos and images without watermark. Save XiaoHongShu content in original quality.</p>
+        </section>
+
+        <main>
+            <div class="input-section">
+                <textarea id="urlInput" placeholder="Paste RedNote (小红书) link here..."></textarea>
+                <div class="button-group">
+                    <button id="pasteButton"><i class="fas fa-paste"></i> Paste</button>
+                    <button id="clearButton"><i class="fas fa-times"></i> Clear</button>
+                    <button id="startButton">Download</button>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection">
+                <div class="loader" id="loader">
+                    <div class="spinner"></div>
+                    <p>Processing RedNote content...</p>
+                </div>
+                
+                <div class="result-content" id="resultContent">
+                    <h2 id="videoTitle"></h2>
+                    <div class="media-preview">
+                        <div class="preview-container">
+                            <h3>Content Preview</h3>
+                            <div class="video-container" id="videoPreview"></div>
+                            <button id="downloadVideo" class="download-button">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="error-container" id="errorContainer">
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+        </main>
+
+        <section class="how-to-use">
+            <h2>How to Download RedNote (小红书) Content?</h2>
+            <div class="instructions">
+                <p>Download RedNote videos and images easily with our free tool. Save your favorite XiaoHongShu content without watermarks.</p>
+                
+                <div class="features">
+                    <h3>Why Choose Our RedNote Downloader?</h3>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>No Watermark</h4>
+                            <p>Download clean content without watermarks</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-hd-video"></i>
+                            <h4>Original Quality</h4>
+                            <p>Save in original HD resolution</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-free"></i>
+                            <h4>100% Free</h4>
+                            <p>No registration or payment required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 NoWatermark. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

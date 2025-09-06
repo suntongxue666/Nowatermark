@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO优化的TDK信息 -->
-    <title>TikTok Video Downloader - Download TikTok Videos Without Watermark | NoWatermark</title>
-    <meta name="description" content="Download TikTok videos without watermark for free. Save TikTok videos in HD quality, fast and easy. No registration required, works on all devices.">
-    <meta name="keywords" content="TikTok downloader, TikTok video downloader, download TikTok without watermark, TikTok HD download, free TikTok downloader, save TikTok videos">
+    <title>Instagram Video & Photo Downloader - Save IG Reels, Stories, Photos | NoWatermark</title>
+    <meta name="description" content="Download Instagram videos, photos, reels, and stories for free. Save Instagram content in HD quality without watermark. Works on all devices.">
+    <meta name="keywords" content="Instagram downloader, Instagram video downloader, Instagram photo downloader, IG reels downloader, Instagram stories downloader, save Instagram videos">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nowatermark.top/tiktok">
-    <meta property="og:title" content="TikTok Video Downloader - No Watermark | NoWatermark">
-    <meta property="og:description" content="Download TikTok videos without watermark for free. Save TikTok videos in HD quality instantly.">
+    <meta property="og:url" content="https://nowatermark.top/instagram.html">
+    <meta property="og:title" content="Instagram Video & Photo Downloader | NoWatermark">
+    <meta property="og:description" content="Download Instagram videos, photos, reels, and stories for free in HD quality.">
     <meta property="og:image" content="https://nowatermark.top/favicon-192.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nowatermark.top/tiktok">
-    <meta property="twitter:title" content="TikTok Video Downloader - No Watermark | NoWatermark">
-    <meta property="twitter:description" content="Download TikTok videos without watermark for free. Save TikTok videos in HD quality instantly.">
+    <meta property="twitter:url" content="https://nowatermark.top/instagram.html">
+    <meta property="twitter:title" content="Instagram Video & Photo Downloader | NoWatermark">
+    <meta property="twitter:description" content="Download Instagram videos, photos, reels, and stories for free in HD quality.">
     <meta property="twitter:image" content="https://nowatermark.top/favicon-192.png">
     
     <!-- Favicon -->
@@ -29,24 +29,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "NoWatermark TikTok Downloader",
-      "url": "https://nowatermark.top/tiktok",
-      "description": "Free TikTok video downloader that removes watermarks and saves videos in HD quality",
-      "applicationCategory": "MultimediaApplication",
-      "operatingSystem": "Web Browser",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEJD1NWJ7C"></script>
@@ -77,9 +59,9 @@
                 <h1><a href="index.html" style="text-decoration: none; color: inherit;">NoWatermark</a></h1>
             </div>
             <nav class="platform-nav">
-                <a href="tiktok.html" data-platform="tiktok" class="active">TikTok</a>
+                <a href="tiktok.html" data-platform="tiktok">TikTok</a>
                 <a href="youtube.html" data-platform="youtube">YouTube</a>
-                <a href="instagram.html" data-platform="instagram">Instagram</a>
+                <a href="instagram.html" data-platform="instagram" class="active">Instagram</a>
                 <a href="rednote.html" data-platform="rednote">RedNote</a>
                 <a href="pinterest.html" data-platform="pinterest">Pinterest</a>
                 <a href="bilibili.html" data-platform="bilibili">Bilibili</a>
@@ -92,13 +74,13 @@
 
     <div class="container">
         <section class="hero-section">
-            <h2>TikTok Video Downloader - No Watermark</h2>
-            <p class="subtitle">Download TikTok videos in HD quality without watermark. Fast, free, and works on all devices.</p>
+            <h2>Instagram Video & Photo Downloader</h2>
+            <p class="subtitle">Download Instagram videos, photos, reels, and stories in HD quality. Save IG content instantly.</p>
         </section>
 
         <main>
             <div class="input-section">
-                <textarea id="urlInput" placeholder="Paste TikTok video link here..."></textarea>
+                <textarea id="urlInput" placeholder="Paste Instagram post, reel, or story URL here..."></textarea>
                 <div class="button-group">
                     <button id="pasteButton"><i class="fas fa-paste"></i> Paste</button>
                     <button id="clearButton"><i class="fas fa-times"></i> Clear</button>
@@ -109,7 +91,7 @@
             <div class="result-section" id="resultSection">
                 <div class="loader" id="loader">
                     <div class="spinner"></div>
-                    <p>Processing TikTok video...</p>
+                    <p>Processing Instagram content...</p>
                 </div>
                 
                 <div class="result-content" id="resultContent">
@@ -117,18 +99,18 @@
                     
                     <div class="media-preview">
                         <div class="preview-container">
-                            <h3>Video Preview</h3>
+                            <h3>Media Preview</h3>
                             <div class="video-container" id="videoPreview"></div>
                             <button id="downloadVideo" class="download-button">
-                                <i class="fas fa-download"></i> Download Video
+                                <i class="fas fa-download"></i> Download Media
                             </button>
                         </div>
                         
                         <div class="preview-container">
-                            <h3>Cover Preview</h3>
+                            <h3>Thumbnail Preview</h3>
                             <div class="image-container" id="coverPreview"></div>
                             <button id="downloadCover" class="download-button">
-                                <i class="fas fa-download"></i> Download Cover
+                                <i class="fas fa-download"></i> Download Thumbnail
                             </button>
                         </div>
                     </div>
@@ -141,68 +123,68 @@
         </main>
 
         <section class="how-to-use">
-            <h2>How to Download TikTok Videos Without Watermark?</h2>
+            <h2>How to Download Instagram Videos and Photos?</h2>
             <div class="instructions">
-                <p>With NoWatermark TikTok downloader, you can easily save TikTok videos without watermarks in just a few simple steps. Our tool works directly in your browser - no app installation required!</p>
+                <p>Save Instagram content including videos, photos, reels, and stories with our free downloader. No app installation required - works directly in your browser!</p>
                 
                 <div class="steps">
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h3>Copy TikTok Video Link</h3>
-                            <p>Open TikTok app or website, find the video you want to download, and copy the video link by clicking the "Share" button.</p>
+                            <h3>Copy Instagram URL</h3>
+                            <p>Open Instagram, find the post, reel, or story you want to download, tap the three dots (...) and select "Copy Link".</p>
                         </div>
                     </div>
                     
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h3>Paste the Link</h3>
-                            <p>Paste the TikTok video URL in the input box above and click the "Download" button to start processing.</p>
+                            <h3>Paste and Process</h3>
+                            <p>Paste the Instagram URL into the input box above and click "Download" to analyze the content.</p>
                         </div>
                     </div>
                     
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h3>Download Video</h3>
-                            <p>Once processed, you can download the TikTok video in HD quality without watermark to your device.</p>
+                            <h3>Save to Device</h3>
+                            <p>Choose your preferred quality and download the Instagram content directly to your device.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="features">
-                    <h3>Why Choose Our TikTok Downloader?</h3>
+                    <h3>Instagram Downloader Features</h3>
                     <div class="feature-grid">
                         <div class="feature-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <h4>No Watermark</h4>
-                            <p>Download TikTok videos without the watermark logo</p>
+                            <i class="fas fa-photo-video"></i>
+                            <h4>All Content Types</h4>
+                            <p>Download posts, reels, stories, and IGTV</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-hd-video"></i>
-                            <h4>HD Quality</h4>
-                            <p>Save videos in original high definition quality</p>
+                            <h4>Original Quality</h4>
+                            <p>Save in original HD resolution</p>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-bolt"></i>
-                            <h4>Fast Download</h4>
-                            <p>Quick processing and instant downloads</p>
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Private & Secure</h4>
+                            <p>Your downloads remain private</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-mobile-alt"></i>
-                            <h4>All Devices</h4>
-                            <p>Works on mobile, tablet, and desktop</p>
+                            <h4>Mobile Friendly</h4>
+                            <p>Works perfectly on phones and tablets</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-free"></i>
-                            <h4>100% Free</h4>
-                            <p>No registration or payment required</p>
+                            <h4>Completely Free</h4>
+                            <p>No registration or payment needed</p>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-lock"></i>
-                            <h4>Safe & Private</h4>
-                            <p>Your downloads are private and secure</p>
+                            <i class="fas fa-bolt"></i>
+                            <h4>Instant Download</h4>
+                            <p>Quick processing and fast downloads</p>
                         </div>
                     </div>
                 </div>
