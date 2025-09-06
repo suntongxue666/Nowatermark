@@ -5,6 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitPasswordBtn = document.getElementById('submitPassword');
     const passwordError = document.getElementById('passwordError');
     
+    // 确保导航栏可见
+    const topHeader = document.querySelector('.top-header');
+    if (topHeader) {
+        topHeader.style.display = 'block';
+        console.log('Top header found and displayed');
+    } else {
+        console.error('Top header not found');
+    }
+    
     const urlInput = document.getElementById('urlInput');
     const pasteButton = document.getElementById('pasteButton');
     const clearButton = document.getElementById('clearButton');
