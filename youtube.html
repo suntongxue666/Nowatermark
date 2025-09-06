@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO优化的TDK信息 -->
+    <title>YouTube Video Downloader - Download YouTube Videos & Audio | NoWatermark</title>
+    <meta name="description" content="Download YouTube videos and audio for free. Save YouTube content in HD/4K quality, MP4 and MP3 formats. Fast, secure, and works on all devices.">
+    <meta name="keywords" content="YouTube downloader, YouTube video downloader, download YouTube videos, YouTube to MP4, YouTube to MP3, free YouTube downloader, save YouTube videos">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nowatermark.top/youtube">
+    <meta property="og:title" content="YouTube Video Downloader - Free HD Downloads | NoWatermark">
+    <meta property="og:description" content="Download YouTube videos and audio for free in HD/4K quality. Fast and secure YouTube downloader.">
+    <meta property="og:image" content="https://nowatermark.top/favicon-192.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nowatermark.top/youtube">
+    <meta property="twitter:title" content="YouTube Video Downloader - Free HD Downloads | NoWatermark">
+    <meta property="twitter:description" content="Download YouTube videos and audio for free in HD/4K quality. Fast and secure YouTube downloader.">
+    <meta property="twitter:image" content="https://nowatermark.top/favicon-192.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "NoWatermark YouTube Downloader",
+      "url": "https://nowatermark.top/youtube",
+      "description": "Free YouTube video and audio downloader with HD/4K quality support",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="password-modal" id="passwordModal">
+        <div class="password-container">
+            <h2>Enter Password</h2>
+            <input type="password" id="passwordInput" placeholder="Enter password">
+            <button id="submitPassword">Submit</button>
+            <p id="passwordError" class="error-message"></p>
+        </div>
+    </div>
+
+    <header class="top-header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="/" style="text-decoration: none; color: inherit;">NoWatermark</a></h1>
+            </div>
+            <nav class="platform-nav">
+                <a href="tiktok.html" data-platform="tiktok">TikTok</a>
+                <a href="youtube.html" data-platform="youtube" class="active">YouTube</a>
+                <a href="#" data-platform="instagram">Instagram</a>
+                <a href="#" data-platform="rednote">RedNote</a>
+                <a href="#" data-platform="pinterest">Pinterest</a>
+                <a href="#" data-platform="bilibili">Bilibili</a>
+                <a href="#" data-platform="facebook">Facebook</a>
+                <a href="#" data-platform="threads">Threads</a>
+                <a href="#" data-platform="vk">VK</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero-section">
+            <h2>YouTube Video Downloader - Free HD Downloads</h2>
+            <p class="subtitle">Download YouTube videos and audio in HD, 4K quality. Support MP4, MP3 formats on all devices.</p>
+        </section>
+
+        <main>
+            <div class="input-section">
+                <textarea id="urlInput" placeholder="Paste YouTube video URL here..."></textarea>
+                <div class="button-group">
+                    <button id="pasteButton"><i class="fas fa-paste"></i> Paste</button>
+                    <button id="clearButton"><i class="fas fa-times"></i> Clear</button>
+                    <button id="startButton">Download</button>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection">
+                <div class="loader" id="loader">
+                    <div class="spinner"></div>
+                    <p>Processing YouTube video...</p>
+                </div>
+                
+                <div class="result-content" id="resultContent">
+                    <h2 id="videoTitle"></h2>
+                    
+                    <div class="media-preview">
+                        <div class="preview-container">
+                            <h3>Video Preview</h3>
+                            <div class="video-container" id="videoPreview"></div>
+                            <button id="downloadVideo" class="download-button">
+                                <i class="fas fa-download"></i> Download Video
+                            </button>
+                        </div>
+                        
+                        <div class="preview-container">
+                            <h3>Thumbnail Preview</h3>
+                            <div class="image-container" id="coverPreview"></div>
+                            <button id="downloadCover" class="download-button">
+                                <i class="fas fa-download"></i> Download Thumbnail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="error-container" id="errorContainer">
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+        </main>
+
+        <section class="how-to-use">
+            <h2>How to Download YouTube Videos?</h2>
+            <div class="instructions">
+                <p>NoWatermark YouTube downloader lets you save YouTube videos and audio to your device quickly and easily. Download in various quality options including HD and 4K resolution.</p>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Copy YouTube Video URL</h3>
+                            <p>Go to YouTube, find the video you want to download, and copy the video URL from the address bar or share button.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Paste and Process</h3>
+                            <p>Paste the YouTube URL in the input field above and click "Download" to analyze the video content.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Choose Format & Download</h3>
+                            <p>Select your preferred video quality or audio format, then download the file to your device instantly.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features">
+                    <h3>Features of Our YouTube Downloader</h3>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-video"></i>
+                            <h4>Multiple Formats</h4>
+                            <p>Download as MP4 video or MP3 audio</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-hd-video"></i>
+                            <h4>HD & 4K Quality</h4>
+                            <p>Support up to 4K resolution downloads</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <h4>Fast Processing</h4>
+                            <p>Quick analysis and instant downloads</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-desktop"></i>
+                            <h4>Cross-Platform</h4>
+                            <p>Works on Windows, Mac, Android, iOS</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-gift"></i>
+                            <h4>Always Free</h4>
+                            <p>No subscription or hidden charges</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-user-shield"></i>
+                            <h4>Privacy Protected</h4>
+                            <p>No tracking, your activity stays private</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-item">
+                        <h4>Is it legal to download YouTube videos?</h4>
+                        <p>You should only download videos that you own or have permission to download. Check YouTube's terms of service and copyright laws in your region.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>What video qualities are supported?</h4>
+                        <p>We support various qualities from 144p to 4K, depending on the original video's available formats on YouTube.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 NoWatermark. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
