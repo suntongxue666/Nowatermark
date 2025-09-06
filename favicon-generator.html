@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Favicon Generator</title>
+</head>
+<body>
+<canvas id="canvas16" width="16" height="16"></canvas>
+<canvas id="canvas32" width="32" height="32"></canvas>
+<canvas id="canvas192" width="192" height="192"></canvas>
+<canvas id="canvas180" width="180" height="180"></canvas>
+
+<script>
+function drawIcon(canvas, size) {
+    const ctx = canvas.getContext('2d');
+    const center = size / 2;
+    
+    // Background circle
+    ctx.fillStyle = '#4a6cf7';
+    ctx.beginPath();
+    ctx.arc(center, center, size/2 - 1, 0, 2 * Math.PI);
+    ctx.fill();
+    
+    // White border
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = size > 32 ? 4 : 1;
+    ctx.stroke();
+    
+    // Play button
+    ctx.fillStyle = 'white';
+    ctx.beginPath();
+    const playSize = size * 0.3;
+    ctx.moveTo(center - playSize/2, center - playSize/2);
+    ctx.lineTo(center - playSize/2, center + playSize/2);
+    ctx.lineTo(center + playSize/2, center);
+    ctx.closePath();
+    ctx.fill();
+    
+    // No watermark symbol (crossed water drop)
+    ctx.save();
+    ctx.translate(center + size/4, center - size/4);
+    const dropSize = size * 0.15;
+    
+    // Water drop
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+    ctx.beginPath();
+    ctx.arc(0, dropSize/2, dropSize/2, 0, 2 * Math.PI);
+    ctx.fill();
+    
+    // Cross line
+    ctx.strokeStyle = '#dc3545';
+    ctx.lineWidth = Math.max(1, size/16);
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(-dropSize/2, 0);
+    ctx.lineTo(dropSize/2, dropSize);
+    ctx.stroke();
+    
+    ctx.restore();
+}
+
+// Draw different sizes
+drawIcon(document.getElementById('canvas16'), 16);
+drawIcon(document.getElementById('canvas32'), 32);
+drawIcon(document.getElementById('canvas192'), 192);
+drawIcon(document.getElementById('canvas180'), 180);
+
+// Download function
+function downloadCanvas(canvas, filename) {
+    const link = document.createElement('a');
+    link.download = filename;
+    link.href = canvas.toDataURL();
+    link.click();
+}
+
+// Auto download (you can uncomment to use)
+// downloadCanvas(document.getElementById('canvas16'), 'favicon-16.png');
+// downloadCanvas(document.getElementById('canvas32'), 'favicon-32.png');
+// downloadCanvas(document.getElementById('canvas192'), 'favicon-192.png');
+// downloadCanvas(document.getElementById('canvas180'), 'apple-touch-icon.png');
+</script>
+
+<p>右键保存canvas图像，或使用浏览器控制台运行：</p>
+<pre>
+downloadCanvas(document.getElementById('canvas16'), 'favicon-16.png');
+downloadCanvas(document.getElementById('canvas32'), 'favicon-32.png');
+downloadCanvas(document.getElementById('canvas192'), 'favicon-192.png');
+downloadCanvas(document.getElementById('canvas180'), 'apple-touch-icon.png');
+</pre>
+
+</body>
+</html>

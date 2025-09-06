@@ -1,0 +1,15 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="#4a6cf7" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Play button / Video symbol -->
+  <polygon points="12,10 12,22 22,16" fill="white"/>
+  
+  <!-- No watermark symbol (crossed out water drop) -->
+  <g transform="translate(20, 8)">
+    <!-- Water drop -->
+    <path d="M6 4c0-2-3-4-3-4s-3 2-3 4c0 1.5 1.5 3 3 3s3-1.5 3-3z" fill="white" opacity="0.8"/>
+    <!-- Cross out line -->
+    <line x1="0" y1="1" x2="6" y2="7" stroke="#dc3545" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>
