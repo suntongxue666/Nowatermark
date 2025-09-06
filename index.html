@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoWatermark - Download Videos Without Watermark</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="password-modal" id="passwordModal">
+            <div class="password-container">
+                <h2>Enter Password</h2>
+                <input type="password" id="passwordInput" placeholder="Enter password">
+                <button id="submitPassword">Submit</button>
+                <p id="passwordError" class="error-message"></p>
+            </div>
+        </div>
+
+        <header>
+            <div class="logo">
+                <h1>NoWatermark</h1>
+                <p>Download videos without watermark</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <textarea id="urlInput" placeholder="Paste link or text containing link here..."></textarea>
+                <div class="button-group">
+                    <button id="pasteButton"><i class="fas fa-paste"></i> Paste</button>
+                    <button id="startButton">Start</button>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection">
+                <div class="loader" id="loader">
+                    <div class="spinner"></div>
+                    <p>Processing...</p>
+                </div>
+                
+                <div class="result-content" id="resultContent">
+                    <h2 id="videoTitle"></h2>
+                    
+                    <div class="media-preview">
+                        <div class="preview-container">
+                            <h3>Video Preview</h3>
+                            <div class="video-container" id="videoPreview"></div>
+                            <button id="downloadVideo" class="download-button">
+                                <i class="fas fa-download"></i> Download Video
+                            </button>
+                        </div>
+                        
+                        <div class="preview-container">
+                            <h3>Cover Preview</h3>
+                            <div class="image-container" id="coverPreview"></div>
+                            <button id="downloadCover" class="download-button">
+                                <i class="fas fa-download"></i> Download Cover
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="error-container" id="errorContainer">
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 NoWatermark. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
