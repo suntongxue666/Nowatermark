@@ -113,13 +113,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Process URL and fetch data
     function processUrl(url) {
         // Show result section and loader
-        resultSection.style.display = 'block';
-        loader.style.display = 'flex';
-        resultContent.style.display = 'none';
-        errorContainer.style.display = 'none';
+        if (resultSection) {
+            resultSection.style.display = 'block';
+        }
+        if (loader) {
+            loader.style.display = 'flex';
+        }
+        if (resultContent) {
+            resultContent.style.display = 'none';
+        }
+        if (errorContainer) {
+            errorContainer.style.display = 'none';
+        }
         
         // Scroll to result section
-        resultSection.scrollIntoView({ behavior: 'smooth' });
+        if (resultSection) {
+            resultSection.scrollIntoView({ behavior: 'smooth' });
+        }
         
         // Construct API URL
         const apiUrl = `${API_BASE_URL}?ak=${API_KEY}&link=${encodeURIComponent(url)}`;
@@ -151,44 +161,68 @@ document.addEventListener('DOMContentLoaded', function() {
         resultContent.style.display = 'block';
         
         // Set video title
-        videoTitle.textContent = content.title || 'Untitled';
+        if (videoTitle) {
+            videoTitle.textContent = content.title || 'Untitled';
+        }
         
         // Display video preview
-        if (content.url) {
-            videoPreview.innerHTML = `<video controls><source src="${content.url}" type="video/mp4">Your browser does not support the video tag.</video>`;
-            downloadVideo.style.display = 'block';
-            
-            // Set download video button
-            downloadVideo.onclick = function() {
-                downloadMedia(content.url, `${content.title || 'video'}.mp4`);
-            };
-        } else {
-            videoPreview.innerHTML = '<p>No video available</p>';
-            downloadVideo.style.display = 'none';
+        if (videoPreview) {
+            if (content.url) {
+                videoPreview.innerHTML = `<video controls><source src="${content.url}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                if (downloadVideo) {
+                    downloadVideo.style.display = 'block';
+                    
+                    // Set download video button
+                    downloadVideo.onclick = function() {
+                        downloadMedia(content.url, `${content.title || 'video'}.mp4`);
+                    };
+                }
+            } else {
+                videoPreview.innerHTML = '<p>No video available</p>';
+                if (downloadVideo) {
+                    downloadVideo.style.display = 'none';
+                }
+            }
         }
         
         // Display cover preview
-        if (content.cover) {
-            coverPreview.innerHTML = `<img src="${content.cover}" alt="Cover">`;
-            downloadCover.style.display = 'block';
-            
-            // Set download cover button
-            downloadCover.onclick = function() {
-                downloadMedia(content.cover, `${content.title || 'cover'}.jpg`);
-            };
-        } else {
-            coverPreview.innerHTML = '<p>No cover available</p>';
-            downloadCover.style.display = 'none';
+        if (coverPreview) {
+            if (content.cover) {
+                coverPreview.innerHTML = `<img src="${content.cover}" alt="Cover">`;
+                if (downloadCover) {
+                    downloadCover.style.display = 'block';
+                    
+                    // Set download cover button
+                    downloadCover.onclick = function() {
+                        downloadMedia(content.cover, `${content.title || 'cover'}.jpg`);
+                    };
+                }
+            } else {
+                coverPreview.innerHTML = '<p>No cover available</p>';
+                if (downloadCover) {
+                    downloadCover.style.display = 'none';
+                }
+            }
         }
     }
     
     // Show error message
     function showError(message) {
-        resultSection.style.display = 'block';
-        loader.style.display = 'none';
-        resultContent.style.display = 'none';
-        errorContainer.style.display = 'block';
-        errorMessage.textContent = message;
+        if (resultSection) {
+            resultSection.style.display = 'block';
+        }
+        if (loader) {
+            loader.style.display = 'none';
+        }
+        if (resultContent) {
+            resultContent.style.display = 'none';
+        }
+        if (errorContainer) {
+            errorContainer.style.display = 'block';
+        }
+        if (errorMessage) {
+            errorMessage.textContent = message;
+        }
     }
     
     // Download media function
